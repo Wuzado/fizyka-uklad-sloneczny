@@ -24,40 +24,22 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
+    <v-app-bar fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
         <nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer :absolute="true" app>
+      <span>
+        Jan Dworakowski, &copy; {{ new Date().getFullYear() }}. Modele 3D
+        pochodzą z NASA Visualization Technology Applications and Development
+        (VTAD), i są udostępnione w domenie publicznej.
+      </span>
     </v-footer>
   </v-app>
 </template>
@@ -66,25 +48,65 @@
 export default {
   data() {
     return {
-      clipped: false,
       drawer: false,
-      fixed: false,
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Wszystkie planety',
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          icon: 'mdi-weather-sunny',
+          title: 'Słońce',
+          to: '/slonce',
+        },
+        {
+          icon: 'mdi-earth',
+          title: 'Merkury',
+          to: '/merkury',
+        },
+        {
+          icon: 'mdi-earth',
+          title: 'Wenus',
+          to: '/wenus',
+        },
+        {
+          icon: 'mdi-earth',
+          title: 'Ziemia',
+          to: '/ziemia',
+        },
+        {
+          icon: 'mdi-earth',
+          title: 'Mars',
+          to: '/mars',
+        },
+        {
+          icon: 'mdi-earth',
+          title: 'Jowisz',
+          to: '/jowisz',
+        },
+        {
+          icon: 'mdi-earth',
+          title: 'Saturn',
+          to: '/saturn',
+        },
+        {
+          icon: 'mdi-earth',
+          title: 'Uran',
+          to: '/uran',
+        },
+        {
+          icon: 'mdi-earth',
+          title: 'Neptun',
+          to: '/neptun',
+        },
+        {
+          icon: 'mdi-star',
+          title: 'Droga Mleczna',
+          to: '/droga-mleczna',
         },
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
+      title: 'Układ słoneczny i jego planety',
     }
   },
 }

@@ -9,7 +9,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - fizyka-uklad-sloneczny',
+    titleTemplate: 'Układ słoneczny',
     title: 'fizyka-uklad-sloneczny',
     meta: [
       { charset: 'utf-8' },
@@ -41,7 +41,7 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    // '@nuxtjs/axios',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -68,4 +68,8 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  router: {
+    base: '/fizyka-uklad-sloneczny/',
+  },
 }
